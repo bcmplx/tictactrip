@@ -44,7 +44,6 @@ const Search = () => {
 		}
 		else if (prev.target.id === 'arrivee' || isFocus === 'end'){
 			setActiveArrivee(true)
-			// setIsFocus('end')
 			setActiveDepart(false)
 		}
 		else if (prev.target.localName === 'li' && prev.target.id === 'departid'){
@@ -77,7 +76,6 @@ const Search = () => {
 		else if (data.target.id === 'arrivee') {
 			setUserArrivee(data.target.value)
 			setUserInputArrivee(data.target.value)
-			console.log(userInputArrivee)
 		}
 		
 	}

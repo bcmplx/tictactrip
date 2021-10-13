@@ -8,8 +8,6 @@ const Suggest = (props) => {
 
 	const [data, setData] = useState([])
 	const [loadingBubbles, setLoadingBubbles] = useState(false)
-	// const test = props.userDepart
-	// let depart = props
 
 
 	const handleClick = (event) => {
@@ -42,7 +40,6 @@ const Suggest = (props) => {
 			props.setNextFocus()
 		}
 		else {
-			console.log('ici')
 			let result = event.target.innerHTML.split(',')
 			props.setUserDepart(result[0])
 			props.setArrivFocus()
@@ -62,7 +59,6 @@ const Suggest = (props) => {
 	}
 
 	const newInput = (element) => {
-		console.log(element.target)
 		if(element.target.id === 'mobileInputDepart') {
 			props.setUserInputDepart(element.target.value)
 		}
@@ -84,7 +80,6 @@ const Suggest = (props) => {
 	useEffect(() => {
 		const fetchData = async () => {	
 			let result;
-			// console.log(props.userDepart)
 
 			if(!props.researchDone) {
 				if(props.userInputDepart && props.userInputDepart !== '') {
@@ -131,7 +126,6 @@ const Suggest = (props) => {
 
 			<SugWrapper active={props.active}  id="depart">
 				{/* <IoMdArrowDropleft css={`color: #fefefe;`}/> */}
-				{/* {console.log('researchDone: ',props.researchDone)} */}
 				<Header>
 					{title()}
 					{props.isFocus === 'start' ? <h3>Gare de départ</h3> : <h3>Gare d'arrivée</h3>}
